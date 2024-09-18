@@ -1,0 +1,11 @@
+node_id=1
+node_name=primary
+conninfo='host=172.31.19.5 user=repmgr dbname=repdb password=abc connect_timeout=2'
+data_directory='/var/lib/pgsql/16/data'
+failover=automatic
+promote_command='/usr/pgsql-16/bin/repmgr standby promote -f /var/lib/pgsql/repmgr.conf --log-to-file'
+follow_command='/usr/pgsql-16/bin/repmgr standby follow -f /var/lib/pgsql/repmgr.conf --log-to-file --upstream-node-id=%n'
+pg_bindir='/usr/pgsql-16/bin'
+log_file='/var/lib/pgsql/repmgr.log'
+repmgrd_service_start_command = '/usr/pgsql-16/bin/repmgrd start'
+repmgrd_service_stop_command = '/usr/pgsql-16/bin/repmgrd stop'
